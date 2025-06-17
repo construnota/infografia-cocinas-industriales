@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: El Ecosistema de Mantenimiento de Cocinas Industriales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E0F2F1;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .kpi-card {
+            background-color: #003F5C;
+            color: white;
+        }
+        .flow-card {
+            border: 2px solid #366682;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003F5C] mb-2">La Maquinaria del Sabor</h1>
+            <p class="text-lg text-[#366682]">Un Vistazo al Ecosistema de Mantenimiento de Cocinas en las Américas</p>
+        </header>
+
+        <section id="intro" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <p class="text-center text-lg leading-relaxed">
+                    Detrás de cada plato exitoso, hay una cocina operando a la perfección. El mantenimiento y la reparación de equipos industriales no son solo tareas técnicas; son el pilar que sostiene la eficiencia, seguridad y rentabilidad del sector gastronómico. Este análisis visualiza a los actores clave que mantienen las cocinas funcionando en Estados Unidos, México, Colombia, Brasil y Venezuela, revelando un mercado en plena transformación digital.
+                </p>
+            </div>
+        </section>
+
+        <section id="business-models" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003F5C]">Los Dos Lados del Servicio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center flow-card">
+                    <div class="text-6xl mb-4">🔧</div>
+                    <h3 class="text-2xl font-semibold mb-2 text-[#366682]">Expertos en el Terreno</h3>
+                    <p>Proveedores de servicios directos que ofrecen reparaciones, instalaciones y mantenimiento práctico. Su valor reside en la experiencia técnica, la rapidez de respuesta y las certificaciones de marca.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center flow-card">
+                    <div class="text-6xl mb-4">💻</div>
+                    <h3 class="text-2xl font-semibold mb-2 text-[#366682]">Centros de Mando Digitales</h3>
+                    <p>Plataformas SaaS (Software as a Service) que centralizan y optimizan la gestión del mantenimiento. Su poder se basa en los datos, la automatización y la eficiencia a escala.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="monetization-models" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003F5C]">Modelos de Monetización Clave</h2>
+            <p class="text-center text-[#366682] mb-6 max-w-3xl mx-auto">Comprender cómo estas plataformas generan ingresos es crucial para analizar su viabilidad y modelo de negocio.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-start">
+                    <h3 class="text-xl font-bold mb-3 text-[#003F5C]">Servicio Directo</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Tarifas por servicio (reparaciones, instalaciones, mantenimiento preventivo).</li>
+                        <li>Contratos de mantenimiento (anuales/semestrales).</li>
+                        <li>Venta de refacciones y repuestos.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-start">
+                    <h3 class="text-xl font-bold mb-3 text-[#003F5C]">SaaS / CMMS</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Tarifas de suscripción (mensuales/anuales) por uso de la plataforma.</li>
+                        <li>Basado en número de ubicaciones, usuarios o características.</li>
+                        <li>Comisiones por transacciones en marketplaces de proveedores.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-start">
+                    <h3 class="text-xl font-bold mb-3 text-[#003F5C]">Fabricante + Servicio</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Venta de equipos de marca propia.</li>
+                        <li>Venta de repuestos originales (OEM).</li>
+                        <li>Tarifas por servicio técnico para sus propias marcas.</li>
+                        <li>Contratos de servicio post-venta.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-start">
+                    <h3 class="text-xl font-bold mb-3 text-[#003F5C]">Cooperativa / Red</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Tarifas de membresía o participación.</li>
+                        <li>Tarifas por servicios coordinados a través de la red.</li>
+                        <li>Beneficios del poder de compra (descuentos en repuestos).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="sercoinfal-proposal" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003F5C]">Sercoinfal: Relanzando el Servicio en Venezuela</h2>
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
+                <p class="text-center text-lg leading-relaxed text-[#366682]">
+                    Con más de 20 años de experiencia en la construcción y mantenimiento de cocinas, Sercoinfal busca innovar su departamento de servicio técnico. Su objetivo es transformar su conocimiento y marca en una solución holística y tecnológicamente avanzada para el mercado venezolano, un sector actualmente fragmentado y con una demanda insatisfecha de servicios integrales.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-[#ADD4D3] p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold mb-2 text-[#003F5C]">Fortalezas Actuales</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Experiencia comprobada (20+ años).</li>
+                            <li>Marca establecida y conocimiento profundo del mercado.</li>
+                            <li>Doble capacidad: Construcción y Mantenimiento.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#ADD4D3] p-4 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-bold mb-2 text-[#003F5C]">Visión de Innovación</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Incorporación de tecnología a procesos.</li>
+                            <li>Oferta de solución de mantenimiento holística.</li>
+                            <li>Posicionamiento como líder en el mercado venezolano.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-center mb-6 text-[#003F5C]">Oportunidades Clave en Venezuela</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center flow-card">
+                    <div class="text-4xl mb-3">⭐</div>
+                    <h4 class="font-semibold text-[#366682]">Necesidad Insatisfecha</h4>
+                    <p class="text-sm text-gray-700">El mercado venezolano carece de soluciones integrales y tecnológicas en mantenimiento.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center flow-card">
+                    <div class="text-4xl mb-3">✨</div>
+                    <h4 class="font-semibold text-[#366682]">Diferenciación Clara</h4>
+                    <p class="text-sm text-gray-700">Sercoinfal puede destacarse en un mercado fragmentado con su experiencia y tecnología.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center flow-card">
+                    <div class="text-4xl mb-3">💰</div>
+                    <h4 class="font-semibold text-[#366682]">Monetización Innovadora</h4>
+                    <p class="text-sm text-gray-700">Contratos preventivos y un modelo SaaS ligero para ingresos recurrentes.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="model-distribution" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                 <h2 class="text-3xl font-bold text-center mb-8 text-[#003F5C]">Distribución de Modelos de Negocio</h2>
+                <p class="text-center text-[#366682] mb-6 max-w-3xl mx-auto">El informe destaca una diversidad de enfoques. Mientras los proveedores de servicios directos forman la base tradicional, las plataformas SaaS y los modelos híbridos (fabricante + servicio) señalan la evolución del sector hacia soluciones más integradas y tecnológicas.</p>
+                <div class="chart-container max-w-lg h-80 md:h-96">
+                    <canvas id="modelDistributionChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="markets" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003F5C]">Mercados Clave y sus Actores Principales</h2>
+            <p class="text-center text-[#366682] mb-6 max-w-3xl mx-auto">Cada mercado presenta modelos de negocio y actores relevantes que definen su dinámica.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 border-b-4 border-[#7A9E9F]">EE. UU. 🇺🇸</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>ServiceChannel:</strong> Plataforma SaaS líder para gestión integral de instalaciones.</li>
+                        <li><strong>Tech24:</strong> Proveedor directo de servicios de reparación y mantenimiento a nivel nacional.</li>
+                        <li><strong>NSC:</strong> Cooperativa que agrupa proveedores de servicio locales para cobertura nacional.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 border-b-4 border-[#7A9E9F]">México 🇲🇽</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>SCI:</strong> Servicio técnico integral y 24/7 con amplia experiencia.</li>
+                        <li><strong>Veraserv:</strong> Especialista en refrigeración con certificaciones de marca y tiempos de respuesta rápidos.</li>
+                        <li><strong>Cocinas Industriales ZECA:</strong> Venta, fabricación y servicio técnico de equipos, con enfoque en soluciones integradas.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 border-b-4 border-[#7A9E9F]">Colombia 🇨🇴</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Inventto Group:</strong> Servicios técnicos certificados para marcas clave y soluciones integrales.</li>
+                        <li><strong>Tecnicoxsas:</strong> Mantenimiento preventivo y correctivo, con venta y fabricación de equipos.</li>
+                        <li><strong>REDESCLEAN S.A.S.:</strong> Diseño, instalación y mantenimiento de cocinas industriales.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 border-b-4 border-[#7A9E9F]">Brasil 🇧🇷</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Sodexo Brasil:</strong> Servicios integrados de gestión de instalaciones y alimentación a gran escala.</li>
+                        <li><strong>Infraspeak:</strong> Plataforma SaaS inteligente para la gestión de mantenimiento.</li>
+                        <li><strong>Croydon:</strong> Fabricante de equipos con servicio técnico y venta de piezas propias.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 border-b-4 border-[#7A9E9F]">Venezuela 🇻🇪</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li><strong>Proveedores Directos Especializados:</strong> Ofrecen reparación y mantenimiento enfocado en equipos específicos.</li>
+                        <li><strong>Distribuidores con Soporte:</strong> Proporcionan servicio post-venta para las marcas que comercializan.</li>
+                        <li><strong>Talleres y Técnicos Independientes:</strong> Resuelven problemas puntuales con flexibilidad y creatividad.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="age-comparison" class="mb-16">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#003F5C]">Antigüedad en la Industria: De la Tradición a la Innovación</h2>
+                <p class="text-center text-[#366682] mb-8 max-w-3xl mx-auto">La longevidad de una empresa a menudo se traduce en confianza y experiencia. El gráfico compara la edad de los actores clave (calculada a 2025), revelando un ecosistema donde conviven empresas con más de 75 años de historia junto a startups tecnológicas que están redefiniendo el mercado en menos de una década.</p>
+                <div class="chart-container h-[500px] md:h-[600px]">
+                    <canvas id="companyAgeChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="success-factors" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003F5C]">Factores Clave de Éxito y Cómo Sercoinfal Puede Incorporarlos</h2>
+            <p class="text-center text-[#366682] mb-8 max-w-3xl mx-auto">Las plataformas líderes en las Américas comparten pilares fundamentales que impulsan su éxito. Sercoinfal puede aprovechar su trayectoria para integrar estos factores y consolidarse en Venezuela.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-[#003F5C]">1. Digitalización y Plataformas Tecnológicas (CMMS/SaaS)</h3>
+                    <p class="text-gray-700 mb-4">**¿Por qué es clave?** Centraliza la gestión, optimiza la programación, facilita el seguimiento y proporciona datos para decisiones proactivas. Permite escalar y ser más eficiente.</p>
+                    <p class="text-gray-700">**¿Cómo Sercoinfal lo incorpora?**</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Implementar un sistema de gestión de órdenes de trabajo (CMMS).</li>
+                        <li>Desarrollar un portal/app para clientes (solicitudes, historial, reportes).</li>
+                        <li>Aprovechar sus 20+ años de datos para análisis predictivo y optimización de servicios.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-[#003F5C]">2. Servicio Integral (Soluciones End-to-End)</h3>
+                    <p class="text-gray-700 mb-4">**¿Por qué es clave?** Simplifica la vida del cliente al ser un único proveedor para diversas necesidades (instalación, mantenimiento, repuestos). Genera relaciones a largo plazo.</p>
+                    <p class="text-gray-700">**¿Cómo Sercoinfal lo incorpora?**</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Enfatizar su capacidad única de "construcción y mantenimiento" de cocinas.</li>
+                        <li>Ofrecer paquetes de mantenimiento preventivo completos.</li>
+                        <li>Integrar la venta y gestión de repuestos de manera fluida.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-[#003F5C]">3. Experiencia y Certificaciones</h3>
+                    <p class="text-gray-700 mb-4">**¿Por qué es clave?** Genera confianza, asegura la calidad del servicio técnico y valida la capacidad para trabajar con equipos complejos.</p>
+                    <p class="text-gray-700">**¿Cómo Sercoinfal lo incorpora?**</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Comunicar activamente sus "más de 20 años de experiencia" como garantía de confianza.</li>
+                        <li>Buscar nuevas certificaciones de marcas líderes en equipos de cocina.</li>
+                        <li>Capacitar continuamente a sus técnicos, documentando sus habilidades.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-[#003F5C]">4. Accesibilidad y Capacidad de Respuesta (24/7)</h3>
+                    <p class="text-gray-700 mb-4">**¿Por qué es clave?** Minimiza el tiempo de inactividad de las cocinas, un factor crítico que impacta directamente los ingresos del cliente.</p>
+                    <p class="text-gray-700">**¿Cómo Sercoinfal lo incorpora?**</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Establecer un sistema de soporte 24/7 (línea telefónica, chat en app).</li>
+                        <li>Optimizar la logística y el despacho de técnicos para reducir los tiempos de llegada.</li>
+                        <li>Asegurar un inventario de repuestos críticos para una "primera visita" más exitosa.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-[#003F5C]">5. Enfoque en Prevención y Optimización de Costos</h3>
+                    <p class="text-gray-700 mb-4">**¿Por qué es clave?** Reduce las costosas reparaciones de emergencia, prolonga la vida útil de los equipos y demuestra un valor a largo plazo para el cliente.</p>
+                    <p class="text-gray-700">**¿Cómo Sercoinfal lo incorpora?**</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Diseñar y promover programas robustos de mantenimiento preventivo.</li>
+                        <li>Utilizar datos para predecir fallas y ofrecer mantenimiento predictivo.</li>
+                        <li>Asesorar a los clientes sobre la eficiencia energética y el cuidado de equipos.</li>
+                        <li>Implementar un modelo de monetización con contratos de mantenimiento recurrentes.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold mb-3 text-[#003F5C]">6. Alquiler de Equipos a Demanda y Mantenimiento</h3>
+                    <p class="text-gray-700 mb-4">**¿Por qué es clave?** Reduce la barrera de entrada para emprendedores y nuevos proyectos, ofreciendo flexibilidad y garantizando operatividad.</p>
+                    <p class="text-gray-700">**¿Cómo Sercoinfal lo incorpora?**</p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Ser el único proveedor con contratos de alquiler de equipos vinculados a un plan de mantenimiento.</li>
+                        <li>Ofrecer equipos esenciales (hornos, refrigeradores) para alquiler a corto/largo plazo.</li>
+                        <li>Crear paquetes especiales para startups o cocinas temporales, generando ingresos recurrentes y lealtad.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-12 pt-8 border-t border-[#7A9E9F]">
+            <p class="text-[#366682]">El futuro del mantenimiento de cocinas es integrado, proactivo y basado en datos. Las plataformas que combinan la experiencia técnica con la inteligencia digital están mejor posicionadas para liderar el camino, garantizando que la maquinaria del sabor nunca se detenga.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const wrapLabel = (label) => {
+                if (label.length <= 16) return label;
+                const words = label.split(' ');
+                let currentLine = '';
+                const lines = [];
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > 16 && currentLine.length > 0) {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) lines.push(currentLine);
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+            
+            const sharedChartOptions = {
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#003F5C',
+                            font: {
+                                size: 14,
+                                weight: '600'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            };
+            
+            const modelCtx = document.getElementById('modelDistributionChart').getContext('2d');
+            new Chart(modelCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Servicio Directo', 'SaaS / CMMS', 'Fabricante + Servicio', 'Cooperativa / Red'],
+                    datasets: [{
+                        label: 'Distribución de Modelos',
+                        data: [6, 4, 3, 2], 
+                        backgroundColor: ['#003F5C', '#366682', '#7A9E9F', '#ADD4D3'],
+                        borderColor: '#E0F2F1',
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    ...sharedChartOptions
+                }
+            });
+
+            const ageCtx = document.getElementById('companyAgeChart').getContext('2d');
+            new Chart(ageCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        wrapLabel('Commercial Kitchen'), 
+                        wrapLabel('Croydon'), 
+                        wrapLabel('Sodexo'), 
+                        wrapLabel('NSC'), 
+                        wrapLabel('ServiceChannel'),
+                        wrapLabel('Veraserv'), 
+                        wrapLabel('Infraspeak'), 
+                        wrapLabel('Boh')
+                    ],
+                    datasets: [{
+                        label: 'Años en el mercado (a 2025)',
+                        data: [
+                            2025 - 1946, 
+                            2025 - 1962, 
+                            2025 - 1966,
+                            2025 - 1994, 
+                            2025 - 1999, 
+                            2025 - 2013, 
+                            2025 - 2015,
+                            2025 - 2019
+                        ],
+                        backgroundColor: '#366682',
+                        borderColor: '#003F5C',
+                        borderWidth: 2,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            ticks: { 
+                                color: '#003F5C',
+                                font: {
+                                    weight: '600'
+                                }
+                            }
+                        },
+                        x: {
+                            ticks: { color: '#003F5C' }
+                        }
+                    },
+                    ...sharedChartOptions
+                }
+            });
+        });
+    </script>
+</body>
+</html>
